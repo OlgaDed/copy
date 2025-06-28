@@ -1,0 +1,131 @@
+body {
+  font-family: 'Fira Sans', sans-serif;
+  font-style: normal;
+  color: #030a06;
+  /*background-color: #ebf8ed;*/
+}
+
+h1,
+h2 {
+  font-family: 'Comfortaa', sans-serif;
+  font-style: normal;
+}
+
+.gallery a {
+  text-decoration: none;
+}
+
+.gallery ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.gallery h1,
+.gallery h2,
+.gallery h3,
+.gallery h4,
+.gallery h5,
+.gallery h6,
+.gallery p {
+  margin: 0;
+}
+
+.gallery img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Базові стилі (mobile) */
+.gallery {
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.gallery-container {
+  background-color: #ebf8ed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.gallery-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.gallery-item img {
+  border-radius: 32px;
+  width: 100%;
+  height: 288px;
+  object-fit: cover;
+}
+
+/* Планшет (2 колонки) */
+@media (min-width: 768px) {
+  .gallery {
+    max-width: 704px; /* 768px - 32px*2 (padding) */
+    padding: 64px 32px;
+  }
+
+  .gallery-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
+  }
+
+  /* Звичайні зображення */
+  .gallery-item img {
+    height: 338px;
+  }
+
+  /* Високі зображення */
+  .gallery-item:nth-child(2) img,
+  .gallery-item:nth-child(3) img {
+    height: 700px;
+  }
+
+  /* Порядок */
+  .gallery-item:nth-child(1) {
+    order: 4;
+  }
+  .gallery-item:nth-child(2) {
+    order: 2;
+  }
+  .gallery-item:nth-child(3) {
+    order: 3;
+  }
+  .gallery-item:nth-child(4) {
+    order: 1;
+  }
+}
+
+/* Десктоп (3 колонки) */
+@media (min-width: 1440px) {
+  .gallery {
+    max-width: 1312px; /* 1440px - 64px*2 (padding) */
+    padding: 64px;
+  }
+
+  .gallery-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  /* Звичайні зображення */
+  .gallery-item img {
+    height: 421px;
+  }
+
+  /* Високі зображення */
+  .gallery-item:nth-child(2) img,
+  .gallery-item:nth-child(3) img {
+    height: 865px;
+  }
+}
